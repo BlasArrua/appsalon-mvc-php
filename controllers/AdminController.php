@@ -12,9 +12,7 @@ class AdminController{
         $fecha = $_GET['fecha'] ?? date('Y-m-d');
         $fechas = explode('-',$fecha);
 
-        if(!checkdate($fechas[1],$fechas[2],$fechas[0])){
-            header('Location: /404');
-        }
+        if(!checkdate($fechas[1],$fechas[2],$fechas[0])){header('Location: /404');}
 
 
         //consultar DB

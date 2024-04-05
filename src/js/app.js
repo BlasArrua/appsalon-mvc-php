@@ -187,9 +187,7 @@ function seleccionarFecha(){
             e.target.value = '';
             mostrarAlerta('Fines de semana no permitidos','error', '.formulario');
         }
-        else{
-            cita.fecha = e.target.value;
-        }
+        else{cita.fecha = e.target.value;}
     });
 }
 
@@ -216,9 +214,7 @@ function seleccionarHora(){
 function mostrarAlerta(mensaje, tipo, elemento, desaparece = true){
     //previene que se generen muchas alertas
     const alertaPrevia = document.querySelector('.alerta');
-    if(alertaPrevia){
-      alertaPrevia.remove();  
-    }
+    if(alertaPrevia){alertaPrevia.remove();}
 
     //crear alerta
     const alerta = document.createElement('DIV');
@@ -229,10 +225,7 @@ function mostrarAlerta(mensaje, tipo, elemento, desaparece = true){
     const referencia = document.querySelector(elemento);
     referencia.appendChild(alerta);
 
-    if(desaparece){
-        //eliminar alerta
-        setTimeout(() => {alerta.remove();}, 3000);
-    }
+    if(desaparece){setTimeout(() => {alerta.remove();}, 3000);}
 
 }
 
@@ -241,9 +234,7 @@ function mostrarAlerta(mensaje, tipo, elemento, desaparece = true){
 function mostrarResumen(){
    const resumen = document.querySelector('.contenido-resumen');
     //limpiar el contenido del resumen
-    while(resumen.firstChild){
-        resumen.removeChild(resumen.firstChild);
-    }
+    while(resumen.firstChild){resumen.removeChild(resumen.firstChild);}
 
    if(Object.values(cita).includes('') || cita.servicios.length === 0) {
         mostrarAlerta('Seleccione todos los datos necesarios','error','.contenido-resumen', false);

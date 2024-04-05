@@ -16,19 +16,13 @@ body {
     font-family: v.$fuente_principal;
     font-size: 1.6rem;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
-}
+*, *:before, *:after {box-sizing: inherit;}
 
 .contenedor {
     width: 95%;
     max-width: 1200px;
     margin: 0 auto;
 }
-a {
-    text-decoration: none;
-}
+a {text-decoration: none;}
 
-img {
-    max-width: 100%;
-}
+img {max-width: 100%;}

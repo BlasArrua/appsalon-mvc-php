@@ -19,16 +19,13 @@
     .app{
         width: 95%;
         margin: 0 auto;
-        padding: 3rem 0;
-        
+        padding: 3rem 0;   
     }
 
 }
 
 .barra{
-    p{
-        text-align: center;
-    }
+    p{text-align: center;}
     margin:5rem 0;
     @include m.tablet{
         display: flex;
@@ -48,7 +45,5 @@
         justify-content: space-between;
     }
 
-    .boton{
-        margin: 0 0 1rem 0;
-    }
+    .boton{margin: 0 0 1rem 0;}
 }

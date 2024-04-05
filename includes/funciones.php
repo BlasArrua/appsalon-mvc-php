@@ -14,15 +14,11 @@ function s($html) : string {
 }
 
 function esUltimo(string $actual, string $proximo): bool{
-    if($actual !== $proximo){
-        return true;
-    }
+    if($actual !== $proximo){return true;}
     return false;
 }
 
 //funcion que revisa si el usuario esta autentucado
 function isAuth() : void{if(!isset($_SESSION['login'])){header('Location: /');}}
 
-function isAdmin() : void{
-    if(!isset($_SESSION['admin'])){header('Location: /');}
-}
+function isAdmin() : void{if(!isset($_SESSION['admin'])){header('Location: /');}}

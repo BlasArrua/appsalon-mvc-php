@@ -35,9 +35,7 @@
     width: 100%;
     margin: 5rem 0;
 
-    @include tablet {
-        width: auto;
-    }
+    @include tablet {width: auto;}
     &:hover {
         background-color: darken( $bgColor, 10% );
         cursor: pointer;

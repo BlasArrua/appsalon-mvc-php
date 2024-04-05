@@ -32,9 +32,7 @@ class ActiveRecord {
 
         // Iterar los resultados
         $array = [];
-        while($registro = $resultado->fetch_assoc()) {
-            $array[] = static::crearObjeto($registro);
-        }
+        while($registro = $resultado->fetch_assoc()) {$array[] = static::crearObjeto($registro);}
 
         // liberar la memoria
         $resultado->free();
@@ -47,9 +45,7 @@ class ActiveRecord {
     protected static function crearObjeto($registro) {
         $objeto = new static;
 
-        foreach($registro as $key => $value ) {
-            if(property_exists( $objeto, $key  )) {$objeto->$key = $value;}
-        }
+        foreach($registro as $key => $value ) {if(property_exists( $objeto, $key  )) {$objeto->$key = $value;}}
         return $objeto;
     }
 
@@ -67,18 +63,12 @@ class ActiveRecord {
     public function sanitizarAtributos() {
         $atributos = $this->atributos();
         $sanitizado = [];
-        foreach($atributos as $key => $value ) {
-            $sanitizado[$key] = self::$db->escape_string($value);
-        }
+        foreach($atributos as $key => $value ) {$sanitizado[$key] = self::$db->escape_string($value);}
         return $sanitizado;
     }
 
     // Sincroniza BD con Objetos en memoria
-    public function sincronizar($args=[]) { 
-        foreach($args as $key => $value) {
-          if(property_exists($this, $key) && !is_null($value)) {$this->$key = $value;}
-        }
-    }
+    public function sincronizar($args=[]) { foreach($args as $key => $value) {if(property_exists($this, $key) && !is_null($value)) {$this->$key = $value;}}}
 
     // Registros - CRUD
     public function guardar() {

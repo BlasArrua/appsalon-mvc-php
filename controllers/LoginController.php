@@ -162,9 +162,7 @@ class LoginController{
 
 
 
-    public static function mensaje(Router $router){
-        $router->render('auth/mensaje');
-    }
+    public static function mensaje(Router $router){$router->render('auth/mensaje');}
 
 
 
@@ -183,9 +181,7 @@ class LoginController{
         }
 
         $alertas = Usuario::getAlertas();
-        $router->render('auth/confirmar-cuenta',[
-            'alertas' => $alertas
-        ]);
+        $router->render('auth/confirmar-cuenta',['alertas' => $alertas]);
 
     }
 }
